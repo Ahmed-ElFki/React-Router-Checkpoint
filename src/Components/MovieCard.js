@@ -1,6 +1,8 @@
 import React from "react";
+import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
+import MovieData from "./MovieData";
 
-const MovieCard = ({ title, Desc, URL, rate }) => {
+const MovieCard = ({ id, title, Desc, URL, rate }) => {
 	return (
 		<div className='Movie'>
 			<div className='MoviePoster'>
@@ -10,6 +12,13 @@ const MovieCard = ({ title, Desc, URL, rate }) => {
 				<p style={{ marginBottom: "15px" }}>{title}</p>
 				<p style={{ textAlign: "center" }}>{Desc}</p>
 				<p>{rate} Star(s)</p>
+
+				<BrowserRouter>
+					<Switch>
+						<Link to={"/MovieData/" + id}>OK</Link>
+						<Route exact path={"/MovieData/:id"} component={MovieData} />
+					</Switch>
+				</BrowserRouter>
 			</div>
 		</div>
 	);

@@ -7,6 +7,7 @@ const MovieList = ({ moviesToDisplay }) => {
 			{moviesToDisplay.map((currentMovie) => (
 				<MovieCard
 					key={currentMovie.Id}
+					id={currentMovie.Id}
 					title={currentMovie.Title}
 					Desc={currentMovie.Desc}
 					URL={currentMovie.URL}
