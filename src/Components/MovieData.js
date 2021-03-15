@@ -1,10 +1,21 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useParams, useLocation } from "react-router";
 
-const MovieData = ({ match }) => {
-	console.log(match);
+const MovieData = () => {
 	const { id } = useParams();
-	return <div>{id}</div>;
+	const location = useLocation();
+
+	return (
+		<div>
+			<iframe
+				src={location.state.Trailer}
+				style={{ width: "100%", height: "800px" }}
+			/>
+			<p style={{ fontSize: "large", textAlign: "justify" }}>
+				{location.state.LongDesc}
+			</p>
+		</div>
+	);
 };
 
 export default MovieData;

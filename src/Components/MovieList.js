@@ -10,7 +10,9 @@ const MovieList = ({ moviesToDisplay }) => {
 					id={currentMovie.Id}
 					title={currentMovie.Title}
 					Desc={currentMovie.Desc}
+					LongDesc={currentMovie.LongDesc}
 					URL={currentMovie.URL}
+					Trailer={currentMovie.Trailer}
 					rate={currentMovie.Rate}
 				/>
 			))}
